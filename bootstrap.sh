@@ -2,7 +2,12 @@
 cd "$(dirname "${BASH_SOURCE}")"
 git pull
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
+  os=${OSTYPE//[0-9.]}
+  if [[ "$os" == 'darwin' ]]; then
+    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
+  else
+    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude ".aliases_osx" -av . ~
+  fi
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
