@@ -53,7 +53,13 @@ bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
 
 # Move bindings
-bind m:${hyper}   ${middle}
+bind m:ctrl;alt   ${middle}
 
 # Window Hints
 bind esc:cmd hint
+
+# App shortcuts
+bind c:${hyper}  focus 'Google Chrome'
+bind i:${hyper}  focus 'iTunes'
+bind t:${hyper}  focus 'Transmission'
+bind a:${hyper}  focus 'Adium'

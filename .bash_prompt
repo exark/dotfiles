@@ -59,6 +59,6 @@ else
   # Do not set PS1 for dumb terminals
   if [ "$TERM" != 'dumb'  ] && [ -n "$BASH" ]
   then
-    export PS1='\[${BOLD}${GREEN}\]\u@\[${CYAN}\h \[${BLUE}\]\W \$ \[${RESEST}${WHITE}\]'
+    export PS1='\[${BOLD}${GREEN}\]\u@\[${CYAN}\]\h \[${BLUE}\]\W \$ \[${RESEST}${WHITE}\]'
   fi
 fi
