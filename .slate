@@ -11,7 +11,7 @@ config windowHintsSpread true
 alias hyper ctrl;shift;alt;cmd
 
 # Movement aliases
-alias middle move (screenSizeX-windowSizeX)/2;(screenSizeY-windowSizeY)/2 windowSizeX;windowSizeY
+alias middle move screenSizeX*0.1;screenSizeY*0.1 (0.8*screenSizeX);(0.8*screenSizeY)
 
 # Resize Bindings
 bind right:alt       resize +10% +0
@@ -34,6 +34,7 @@ bind right:shift;alt nudge +10% +0
 bind left:shift;alt  nudge -10% +0
 bind up:shift;alt    nudge +0   -10%
 bind down:shift;alt  nudge +0   +10%
+bind m:shift;alt   ${middle}
 
 # Throw Bindings
 bind 1:ctrl;alt         throw 0 resize
@@ -51,9 +52,6 @@ bind up:${hyper}       focus up
 bind down:${hyper}     focus down
 bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
-
-# Move bindings
-bind m:ctrl;alt   ${middle}
 
 # Window Hints
 bind esc:cmd hint
