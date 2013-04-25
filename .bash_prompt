@@ -14,6 +14,7 @@ if tput setaf 1 &> /dev/null; then
 	WHITE=$(tput setaf 7)
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
+	PURPLE=$(tput setaf 13)
 else
 	RED="\033[1;31m"
 	GREEN="\033[1;32m"
@@ -23,6 +24,7 @@ else
 	BLUE = "\033[1;34m"
 	BOLD=""
 	RESET="\033[m"
+	PURPLE="\033[1;36m"
 fi
 
 export RED
@@ -33,6 +35,7 @@ export YELLOW
 export WHITE
 export BOLD
 export RESET
+export PURPLE
 
 export PS2="\[$ORANGE\]→ \[$RESET\]"
 if [ `/usr/bin/whoami` = 'root' ]
