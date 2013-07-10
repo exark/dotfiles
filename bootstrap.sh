@@ -1,13 +1,18 @@
 #!/bin/bash
 cd "$(dirname "${BASH_SOURCE}")"
 git pull
+alias base-rsync='rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "init/"'
 function doIt() {
-  os=${OSTYPE//[0-9.]}
-  if [[ "$os" == 'darwin' ]]; then
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
-  else
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude ".aliases_osx" --exclude ".slate" -av . ~
-  fi
+	os=${OSTYPE//[0-9.]}
+	if [[ "$os" == 'darwin' ]]; then
+		base-rsync -av . ~
+		cp init/private.xml ~/Library/Application\ Support/KeyRemap4MacBook/
+	else
+		base-rsync \
+			--exclude ".aliases_osx" \
+			--exclude ".slate" \
+			-av . ~
+	fi
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
@@ -19,4 +24,5 @@ else
 	fi
 fi
 unset doIt
+unset base-rsync
 source ~/.bash_profile

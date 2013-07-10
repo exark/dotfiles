@@ -7,8 +7,8 @@ alias m="mate ."
 alias o="open"
 alias oo="open ."
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+# Get OS X Software Updates, and update Homebrew
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'
 
 # OS X has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
