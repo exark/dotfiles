@@ -1,7 +1,3 @@
-# @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
-# Shamelessly copied from https://github.com/gf3/dotfiles
-# Screenshot: http://i.imgur.com/s0Blh.png
-
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM=gnome-256color
 elif infocmp xterm-256color >/dev/null 2>&1; then
@@ -18,6 +14,7 @@ if tput setaf 1 &> /dev/null; then
 	WHITE=$(tput setaf 7)
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
+	PURPLE=$(tput setaf 13)
 else
 	RED="\033[1;31m"
 	GREEN="\033[1;32m"
@@ -27,6 +24,7 @@ else
 	BLUE = "\033[1;34m"
 	BOLD=""
 	RESET="\033[m"
+	PURPLE="\033[1;36m"
 fi
 
 export RED
@@ -37,28 +35,22 @@ export YELLOW
 export WHITE
 export BOLD
 export RESET
+export PURPLE
 
-function parse_git_dirty() {
-	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
-}
-
-function parse_git_branch() {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
-
-export PS1="\[${BOLD}${RED}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
 if [ `/usr/bin/whoami` = 'root' ]
 then
   # Do not set PS1 for dumb terminals
   if [ "$TERM" != 'dumb'  ] && [ -n "$BASH" ]
   then
-    export PS1='\[${BOLD}${RED}\]\u@\[${CYAN}\]\h \[${BLUE}\]\W \$ \[${RESEST}${WHITE}\]'
+    export PS1='\[${BOLD}${RED}\]\u@\[${CYAN}\]\h \[${BLUE}\]\W \$ \[${RESEST}${WHITE}\]\n→ '
+    export PS2="→ "
   fi
 else
   # Do not set PS1 for dumb terminals
   if [ "$TERM" != 'dumb'  ] && [ -n "$BASH" ]
   then
-    export PS1='\[${BOLD}${GREEN}\]\u@\[${CYAN}\]\h \[${BLUE}\]\W \$ \[${RESEST}${WHITE}\]'
+    export PS1='\[${BOLD}${GREEN}\]\u@\[${CYAN}\]\h \[${BLUE}\]\W \$ \[${RESEST}${WHITE}\]\n→ '
+    export PS2="→ "
   fi
 fi
