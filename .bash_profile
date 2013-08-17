@@ -43,6 +43,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 set -o vi
 
 # If possible, add tab completion for many more commands
+# TODO(Find better place to handle this for ease of installation on *nix
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
