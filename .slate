@@ -50,8 +50,11 @@ bind right:${hyper}    focus right
 bind left:${hyper}     focus left
 bind up:${hyper}       focus up
 bind down:${hyper}     focus down
-bind up:cmd;alt   focus behind
+bind j:${hyper}   focus behind
 bind down:cmd;alt focus behind
+
+# Grid
+bind g:${hyper}  grid
 
 # Window Hints
 bind esc:cmd hint
@@ -60,5 +63,10 @@ bind esc:cmd hint
 bind c:${hyper}  focus 'Google Chrome'
 bind i:${hyper}  focus 'iTunes'
 bind t:${hyper}  focus 'Transmission'
+<<<<<<< HEAD
 bind a:${hyper}  focus 'Adium'
 bind m:${hyper}  focus 'Mendeley Desktop'
+=======
+bind s:${hyper}  focus 'Terminal'
+bind a:${hyper}  focus 'Adium'
+>>>>>>> 62fe35c09c51dea4b2d32cf5680fcbcfb80f2460
