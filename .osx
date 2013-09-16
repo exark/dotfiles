@@ -305,10 +305,14 @@ defaults write com.apple.dock expose-group-by-app -bool false
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
-# Remove the auto-hiding Dock delay
-defaults write com.apple.Dock autohide-delay -float 0
+# Make dock take forever to show.
+defaults write com.apple.Dock autohide-delay -float 1000
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
+
+# Move dock to the bottom left corner
+defaults write com.apple.Dock orientation -string left
+defaults write com.apple.Dock pinning end
 
 # Enable the 2D Dock
 defaults write com.apple.dock no-glass -bool true
