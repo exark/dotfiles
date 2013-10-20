@@ -24,8 +24,8 @@ bind up:ctrl;alt     resize +0   +10% bottom-right
 bind down:ctrl;alt   resize +0   -10% bottom-right
 
 # Push Bindings
-bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
-bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
+bind right:ctrl;cmd  push right bar-resize:screenSizeX/2
+bind left:ctrl;cmd   push left  bar-resize:screenSizeX/2
 bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
 bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
 
@@ -50,11 +50,8 @@ bind right:${hyper}    focus right
 bind left:${hyper}     focus left
 bind up:${hyper}       focus up
 bind down:${hyper}     focus down
-bind j:${hyper}   focus behind
+bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
-
-# Grid
-bind g:${hyper}  grid
 
 # Window Hints
 bind esc:cmd hint
@@ -63,10 +60,6 @@ bind esc:cmd hint
 bind c:${hyper}  focus 'Google Chrome'
 bind i:${hyper}  focus 'iTunes'
 bind t:${hyper}  focus 'Transmission'
-<<<<<<< HEAD
 bind a:${hyper}  focus 'Adium'
 bind m:${hyper}  focus 'Mendeley Desktop'
-=======
-bind s:${hyper}  focus 'Terminal'
-bind a:${hyper}  focus 'Adium'
->>>>>>> 62fe35c09c51dea4b2d32cf5680fcbcfb80f2460
+bind e:${hyper}  focus 'Evernote'
