@@ -45,6 +45,12 @@ bind left:ctrl;alt;cmd  throw left  resize
 bind up:ctrl;alt;cmd    throw up    resize
 bind down:ctrl;alt;cmd  throw down  resize
 
+# Chat Window Bindings
+bind 1:${hyper}		move (0.75*screenSizeX);(0) (screenSizeX/4);(screenSizeY/4)
+bind 2:${hyper}		move (0.75*screenSizeX);(screenSizeY*0.25) (screenSizeX/4);(screenSizeY/4)
+bind 3:${hyper}		move (0.75*screenSizeX);(screenSizeY*0.50) (screenSizeX/4);(screenSizeY/4)
+bind 4:${hyper}		move (0.75*screenSizeX);(screenSizeY*0.75) (screenSizeX/4);(screenSizeY/4)
+
 # Focus Bindings
 bind right:${hyper}    focus right
 bind left:${hyper}     focus left
@@ -63,3 +69,4 @@ bind t:${hyper}  focus 'Transmission'
 bind a:${hyper}  focus 'Adium'
 bind m:${hyper}  focus 'Mendeley Desktop'
 bind e:${hyper}  focus 'Evernote'
+bind x:${hyper}  focus 'Microsoft Excel'
