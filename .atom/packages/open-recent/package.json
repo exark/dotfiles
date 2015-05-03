@@ -1,0 +1,43 @@
+{
+  "name": "open-recent",
+  "description": "Open recent files in the current window, and recent folders (optionally) in a new window.",
+  "main": "./lib/main",
+  "version": "2.2.2",
+  "author": {
+    "name": "Zren",
+    "url": "https://github.com/Zren/"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zren/atom-open-recent"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.148.0"
+  },
+  "dependencies": {},
+  "readme": "# Open Recent Files/Folders\n\nOpen recent files in the current window, and recent folders (optionally) in a new window.\n\n## Screenshot\n\n![](http://i.imgur.com/d9y4iAi.png)\n\n\n## Settings\n\n* `maxRecentFiles` and `maxRecentDirectories` limit the number of items in the menu.\n* `replaceNewWindowOnOpenDirectory` When true, opening a recent directory will \"open\" in the current window, but only if the window does not have a project path set. Eg: The window that appears when doing File > New Window.\n* `replaceProjectOnOpenDirectory` When true, opening a recent directory will \"open\" in the current window, replacing the current project.\n* `listDirectoriesAddedToProject` When true, the all root directories in a project will be added to the history and not just the 1st root directory.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Zren/atom-open-recent/issues"
+  },
+  "homepage": "https://github.com/Zren/atom-open-recent",
+  "_id": "open-recent@2.2.2",
+  "_shasum": "1aa0b31c4cdc3b3ce278bf4274c7dc2d59cc6128",
+  "_resolved": "file:../d-11543-4499-18tw0n7/package.tgz",
+  "_from": "../d-11543-4499-18tw0n7/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/main.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
