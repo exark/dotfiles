@@ -124,7 +124,8 @@ hs.hotkey.bind(hyper, "A", function() hs.application.launchOrFocus("Adium") end)
 hs.hotkey.bind(hyper, "P", function() hs.application.launchOrFocus("Papers") end)
 hs.hotkey.bind(hyper, "E", function() hs.application.launchOrFocus("Evernote") end)
 hs.hotkey.bind(hyper, "X", function() hs.application.launchOrFocus("Microsoft Excel") end)
-
+hs.hotkey.bind(hyper, "S", function() hs.application.launchOrFocus("Spotify") end)
+hs.hotkey.bind(hyper, "M", function() hs.application.launchOrFocus("Messages") end)
 
 -- Mouse circle example from getting started guide.
 -- This places a red circle around the mouse pointer (because I lose it a lot)
